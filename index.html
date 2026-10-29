@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#111713">
+<title>BLACK SAND: WORLD ON THE BRINK</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="boot"><div class="boot-mark">BLACK SAND</div><p id="boot-status">INITIALIZING FIELD SYSTEMS…</p><div class="load-track"><div id="load-bar"></div></div><button id="retry" hidden>RETRY INITIALIZATION</button></div>
+<div id="app" hidden>
+<canvas id="game-canvas"></canvas>
+<div id="rotate"><div class="rotate-card"><strong>LANDSCAPE REQUIRED</strong><p>Rotate your phone to enter the operation.</p></div></div>
+<section id="start-screen" class="screen">
+<div class="eyebrow">ALTERNATE-HISTORY FICTION • 2026</div>
+<h1>BLACK SAND</h1><h2>WORLD ON THE BRINK</h2>
+<p class="screen-copy">A classified signal. A missing patrol. A region on the edge.</p>
+<button id="start-experience" class="primary">START EXPERIENCE</button>
+<p class="tiny">Audio begins after your interaction. Fictional events and characters.</p>
+</section>
+<section id="menu-screen" class="screen" hidden>
+<div class="eyebrow">FIELD COMMAND // NORTH AFRICA</div><h1>BLACK SAND</h1><h2>WORLD ON THE BRINK</h2>
+<div class="menu-buttons"><button id="new-game" class="primary">NEW GAME</button><button id="continue-game" hidden>CONTINUE</button><button id="settings-open">SETTINGS</button><button id="credits-open">CREDITS</button></div>
+</section>
+<section id="settings-screen" class="panel-screen" hidden><div class="panel"><button class="close" data-close="settings-screen">×</button><h2>SETTINGS</h2>
+<label>Master volume <input id="master-volume" type="range" min="0" max="1" step=".05" value=".65"></label>
+<label>Narration volume <input id="voice-volume" type="range" min="0" max="1" step=".05" value=".9"></label>
+<label>Music volume <input id="music-volume" type="range" min="0" max="1" step=".05" value=".35"></label>
+<label>Effects volume <input id="fx-volume" type="range" min="0" max="1" step=".05" value=".7"></label>
+<label>Look sensitivity <input id="sensitivity" type="range" min=".3" max="2" step=".1" value="1"></label>
+<label>Graphics quality <select id="quality"><option value="low">Low — mobile</option><option value="high">High</option></select></label>
+<label class="check"><input id="subtitles-toggle" type="checkbox" checked> English subtitles</label><label class="check"><input id="narration-toggle" type="checkbox" checked> Narration (voice file if installed)</label>
+<button id="settings-save" class="primary">APPLY SETTINGS</button></div></section>
+<section id="credits-screen" class="panel-screen" hidden><div class="panel"><button class="close" data-close="credits-screen">×</button><h2>CREDITS</h2><p>BLACK SAND: WORLD ON THE BRINK</p><p>Independent prototype • Procedural Three.js environment</p><p>All mission events and geopolitical plot points are fictional. No licensed third-party game assets are included.</p><p>Audio files are optional and must be supplied by the project owner.</p></div></section>
+<div id="cinematic-ui" hidden><div id="fiction-tag">FICTIONAL ALTERNATE HISTORY</div><div id="subtitle"></div><button id="skip-cinematic">SKIP INTRO »</button></div>
+<div id="hud" hidden><div class="hud-top"><div><small>MISSION 01</small><strong>GHOST SIGNAL</strong></div><div id="health-wrap"><span>HEALTH</span><b id="health">100</b><div class="health-bar"><i id="health-fill"></i></div></div><button id="pause">Ⅱ</button></div>
+<div id="objective">OBJECTIVE: MOVE TO THE EQUIPMENT STATION</div><div id="crosshair">+</div><div id="hit-marker"></div><div id="damage-flash"></div>
+<div id="weapon-info"><strong>AR-01</strong><span id="ammo">30 / 90</span></div>
+<div id="prompt"></div>
+<div id="touch-controls"><div id="stick-zone"><div id="stick-base"><div id="stick-knob"></div></div></div><div id="look-zone"></div>
+<button id="fire" class="control fire">FIRE</button><button id="aim" class="control aim">AIM</button><button id="reload" class="control reload">RELOAD</button><button id="sprint" class="control sprint">RUN</button><button id="crouch" class="control crouch">CROUCH</button><button id="interact" class="control interact" hidden>INTERACT</button></div>
+</div>
+<div id="pause-screen" class="panel-screen" hidden><div class="panel"><h2>PAUSED</h2><button id="resume" class="primary">RESUME</button><button id="restart">RESTART MISSION</button><button id="pause-settings">SETTINGS</button><button id="to-menu">MAIN MENU</button></div></div>
+<div id="result-screen" class="panel-screen" hidden><div class="panel"><h2 id="result-title">MISSION COMPLETE</h2><p id="result-copy"></p><button id="result-restart" class="primary">REPLAY MISSION</button><button id="result-menu">MAIN MENU</button></div></div>
+<div id="toast" aria-live="polite"></div>
+</div>
+<script type="module" src="./js/main.js"></script>
+</body></html>
